@@ -3,14 +3,14 @@
 let list=document.querySelector("#search");
 let button=document.querySelector("#button");
 let trash=document.querySelector("#trash");
-let count=0;
+let status=document.querySelector("#status");
 
 const addTask = () => {
-  count++;
   const newTask = document.createElement("div");
   newTask.classList.add("task");
+  const serial = document.querySelectorAll(".task").length + 1;
   newTask.innerHTML = `
-    <p>${count}</p>
+    <p>${serial}</p>
     <p>${list.value}</p>
     <select name="status" id="status">
         <option value="Done">Done</option>
@@ -24,4 +24,12 @@ document.querySelector(".task-container").addEventListener("click",(e)=>{
     if(e.target.classList.contains("trash")){
         e.target.parentElement.remove();
     }
+});
+document.querySelector(".task-container").addEventListener("change", (e) => {
+  if (e.target.value == "pending") {
+    e.target.style.backgroundColor = "red";
+  }
+  else{
+    e.target.style.backgroundColor="green";
+  }
 });
