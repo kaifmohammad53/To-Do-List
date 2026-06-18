@@ -12,6 +12,7 @@ body{
 
 }
 .container{
+    margin-top:50px;
     /* height: 38rem; */
     width: 35rem;
     background-color: whitesmoke;
@@ -104,7 +105,7 @@ h2{
 .task > * {
     justify-self: center;
 }
-#status{
+.status{
     background-color: red;
     border-radius: 5%;
     height: 20px;
