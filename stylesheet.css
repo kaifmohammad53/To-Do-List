@@ -105,7 +105,7 @@ h2{
     justify-self: center;
 }
 #status{
-    background-color: green;
+    background-color: red;
     border-radius: 5%;
     height: 20px;
     width: 80px;

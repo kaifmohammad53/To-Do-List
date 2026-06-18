@@ -13,11 +13,12 @@ const addTask = () => {
     <p>${serial}</p>
     <p>${list.value}</p>
     <select name="status" id="status">
-        <option value="Done">Done</option>
         <option value="pending">Pending</option>
+        <option value="Done">Done</option>
     </select>
     <i id="trash" class="fa-solid fa-trash trash"></i>`;
   document.querySelector(".task-container").append(newTask);
+  list.value="";
 };
 button.addEventListener("click",addTask);
 document.querySelector(".task-container").addEventListener("click",(e)=>{
@@ -26,10 +27,10 @@ document.querySelector(".task-container").addEventListener("click",(e)=>{
     }
 });
 document.querySelector(".task-container").addEventListener("change", (e) => {
-  if (e.target.value == "pending") {
-    e.target.style.backgroundColor = "red";
+  if (e.target.value == "Done") {
+    e.target.style.backgroundColor = "green";
   }
   else{
-    e.target.style.backgroundColor="green";
+    e.target.style.backgroundColor="red";
   }
 });
